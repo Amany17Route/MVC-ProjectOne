@@ -9,6 +9,8 @@ namespace MVC_Project01
 
             app.MapGet("/", () => "Hello World!");
 
+            Console.WriteLine("CreatDevBranch");
+
             app.Run();
         }
     }
