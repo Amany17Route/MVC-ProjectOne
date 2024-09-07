@@ -11,6 +11,8 @@ namespace MVC_Project01
 
             Console.WriteLine("CreatDevBranch");
 
+            Console.WriteLine("Create Session 2");
+
             app.Run();
         }
     }
