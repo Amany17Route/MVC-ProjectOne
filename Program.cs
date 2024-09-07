@@ -7,12 +7,26 @@ namespace MVC_Project01
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
+            // app.MapGet("/Home", () => "Hello World!");
+            app.UseRouting();
 
-           
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/Home", async context =>
+                {
+                    await context.Response.WriteAsync("Hello From Home");
+                });
 
-
+                endpoints.MapPost("/Products", async context =>
+                {
+                    await context.Response.WriteAsync("Hello From Products");
+                });
+        
+            });
+  app.Run(async(HttpContext) => { await HttpContext.Response.WriteAsync("Request  Page Is Not Found"); });
             app.Run();
+
+    
         }
     }
 }
