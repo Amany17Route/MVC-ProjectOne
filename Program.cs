@@ -7,12 +7,12 @@ namespace MVC_Project01
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
             var app = builder.Build();
 
             // app.MapGet("/Home", () => "Hello World!");
             app.UseRouting();
-
+            app.UseStaticFiles();
             #region Routing
             //app.UseEndpoints(endpoints =>
             //{
