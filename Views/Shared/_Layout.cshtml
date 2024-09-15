@@ -1,0 +1,53 @@
+﻿@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+ @*    <title>@ViewBag.Title</title> *@
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <center>
+          @* HTML Tag *@
+           @*<a href="/Home/Index" class="btn btn-dark">Home</a>
+            <a href="/Home/AboutUs" class="btn btn-primary">AboutUs</a>
+            <a href="/Home/ContactUs" class="btn btn-success">ContactUs</a>
+            <a href="/Home/Privacy" class="btn btn-warning">Privacy</a>*@
+           
+            @*  HTML Helper *@
+
+           @* @Html.ActionLink("Home","Index","Home", null ,new{@class = "btn btn-primary"})
+            @Html.ActionLink("AboutUs", "AboutUs", "Home", null, new { @class = "btn btn-success" })
+            @Html.ActionLink("ContactUs", "ContactUs", "Home", null, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Privacy", "Privacy", "Home", null, new { @class = "btn btn-dark" }) *@
+            
+            @* Tag Helper*@
+
+            <a asp-Controller="Home" asp-action="Index" class="btn btn-dark">Home</a>
+            <a asp-Controller="Home" asp-action="AboutUs" class="btn btn-primary">AboutUs</a>
+            <a asp-Controller="Home" asp-action="ContactUs" class="btn btn-success">ContactUs</a>
+            <a asp-Controller="Home" asp-action="Privacy" class="btn btn-warning">Privacy</a>
+            
+ 
+
+        </center>
+
+    </header>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+
+        <center>
+            Copyrights Route Academy @DateTime.Now.Year
+        </center>
+    </footer>
+
+</body>
+</html>

@@ -4,19 +4,26 @@ namespace MVC_Project01.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            //ContentResult result = new ContentResult();
-            //result.Content = "Hello From Content Result";            
-            //return Content("Hello From Content Result") ;
+            return View();
 
-            return Redirect("/Home/AboutUs");
+        }
+        public IActionResult AboutUs()
+        {
+            return View();
+
+        }
+        public IActionResult ContactUs()
+        {
+            return View();
+
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+
         }
 
-        
-        public string AboutUs()
-        {
-            return "About Us Action";
-        }
     }
 }

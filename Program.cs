@@ -7,12 +7,12 @@ namespace MVC_Project01
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
             var app = builder.Build();
 
             // app.MapGet("/Home", () => "Hello World!");
             app.UseRouting();
-
+            app.UseStaticFiles();
             #region Routing
             //app.UseEndpoints(endpoints =>
             //{
@@ -50,8 +50,8 @@ namespace MVC_Project01
             // Controller 
             app.MapControllerRoute(
                 name:"default",
-                pattern:"/{Controller = Home }/{Action = Index}",
-                defaults: new {Controller = "Home" , Action = "Index" }
+                pattern:"/{Controller =Home}/{Action =Privacy}",
+                defaults: new {Controller = "Home" , Action = "Privacy" }
                    
                 );
 
@@ -59,6 +59,7 @@ namespace MVC_Project01
             app.Run();
 
     
+
         }
     }
 }
