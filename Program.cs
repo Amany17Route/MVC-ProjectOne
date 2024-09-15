@@ -50,8 +50,8 @@ namespace MVC_Project01
             // Controller 
             app.MapControllerRoute(
                 name:"default",
-                pattern:"/{Controller = Home }/{Action = Index}",
-                defaults: new {Controller = "Home" , Action = "Index" }
+                pattern:"/{Controller =Home}/{Action =Privacy}",
+                defaults: new {Controller = "Home" , Action = "Privacy" }
                    
                 );
 
